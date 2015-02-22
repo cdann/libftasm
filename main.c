@@ -6,7 +6,7 @@
 /*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 14:32:45 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/20 18:14:21 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/22 15:38:01 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	test_puts();
 void	test_strcpy();
 void	test_memset();
 void	test_bzero();
+void	test_memcpy();
+void	test_strdup();
+
 
 int		main(void)
 {
@@ -42,10 +45,12 @@ int		main(void)
 	//test_toupper();
 	//test_tolower();
 //
+//	test_memcpy();
+	test_strdup();
 	//test_puts();
 	//test_strcatandchicken();
-	test_memset();
-	test_bzero();
+	//test_memset();
+	//test_bzero();
 	//test_strcatandchicken();
 	//test_strcat();
 	//get_number();
@@ -346,4 +351,25 @@ void	test_bzero(){
 	{
 		printf("%d\t", buf[i]);
 	}
+}
+
+void test_memcpy(){
+	char src[20];
+	char dest[50];
+
+
+	memset(src, 'o', 20);
+	memset(dest, 'w', 50);
+	src[19] = '\0';
+	dest[49] = '\0';
+	printf("%s\t%s\n",  dest, src);
+	//ft_memcpy(dest, src, 10);
+	printf("%s %s\n", ft_memcpy(dest, src, 10), dest);
+}
+
+void test_strdup(){
+	char	*s;
+
+	s = ft_strdup("edryftugyhiujokyethgfhbkjnmk,\nblop");
+	printf("%s\n", s);
 }

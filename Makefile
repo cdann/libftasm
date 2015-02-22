@@ -6,7 +6,7 @@
 #    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/02/20 17:59:12 by cdannapp         ###   ########.fr        #
+#    Updated: 2015/02/22 15:33:13 by cdannapp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -26,8 +26,8 @@ SRC = ft_strlen.s \
 	  ft_strcpy.s \
 	  ft_memset.s \
 	  ft_bzero.s \
-	  #ft_memcpy.sm \
-	  #ft_strdup.s \
+	  ft_memcpy.s \
+	  ft_strdup.s \
 	  #ft_cat.s
 
 
@@ -43,7 +43,7 @@ all:  $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
-	@echo "\033[32m ** Lib ASM créée ** \033[0m"
+	@echo "\033[32m  ** Lib ASM créée ** \033[0m"
 
 test: re
 	gcc main.c -L. -lft -mdynamic-no-pic -o tester
@@ -51,9 +51,11 @@ test: re
 
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@echo "\033[31m  Objets SUPPRESSION \033[0m"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[31m  Lib ASM SUPPRESSION \033[0m"
 
 re: fclean all
