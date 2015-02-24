@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matguig <matguig@student.42.fr>            +#+  +:+       +#+         #
+#    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/02/24 15:15:02 by matguig          ###   ########.fr        #
+#    Updated: 2015/02/24 17:32:36 by cdannapp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -30,12 +30,21 @@ SRC = ft_strlen.s \
 	  ft_strdup.s \
 	  ft_cat.s
 
+SRC_TESTS = test/tests_is.c \
+
+
+
 
 OBJ =  $(SRC:.s=.o)
+OBJ_TESTS =  $(SRC_TESTS:.c=.o)
 
 
 
 all:  $(NAME)
+
+%.o: %.c
+	@gcc -Wall -Wextra -Werror -o $@ -c $<
+	@echo "\033[42m \033[0m\c"
 
 %.o: %.s
 	@$(NASM) -f macho64 $< -g -o $@
@@ -45,9 +54,9 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@echo "\033[32m  ** Lib ASM créée ** \033[0m"
 
-test: re
-	@gcc -c main_thomas.c -o main.o
-	@ld main.o -L. -lft -macosx_version_min 10.8 -lSystem -o tester
+test: re $(OBJ_TESTS)
+	@gcc -c test/tests.c -o test/test.o
+	@ld test/test.o $(OBJ_TESTS) -L. -lft -macosx_version_min 10.8 -lSystem -o tester
 	@echo "\033[32m  ** Execution des tests :) ** \033[0m"
 	@./tester
 
