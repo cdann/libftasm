@@ -22,4 +22,7 @@ extern int		ft_toupper(int lt);
 extern int		ft_tolower(int lt);
 extern char 	*ft_strcat(char *s1, const char *s2);
 
+extern int     ft_isupper(int c);
+extern int     ft_islower(int c);
+
 #endif
