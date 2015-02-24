@@ -27,6 +27,8 @@ int		test_isascii();
 
 int		test_memcpy(int lenght);
 
+int		test_puts(char *str);
+
 int 	test_strdup(char *src);
 int 	test_strcat();
 
@@ -38,5 +40,7 @@ int 	test_strcpy(char *str);
 
 int 	test_toupper();
 int 	test_tolower();
+
+void 	test_cat();
 
 #endif
