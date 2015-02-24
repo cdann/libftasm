@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         #
+#    By: matguig <matguig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/02/22 15:33:13 by cdannapp         ###   ########.fr        #
+#    Updated: 2015/02/24 15:15:02 by matguig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
 
-NASM = $(HOME)/.brew/bin/nasm
+NASM = nasm
 
 SRC = ft_strlen.s \
 	  ft_isalpha.s \
