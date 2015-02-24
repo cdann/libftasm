@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests_is.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:17:19 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/24 17:22:48 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/24 17:57:28 by matguig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ int	test_isalpha() {
 	}
 
 	if (error == 0) {
-		write(1, "OK\n", 3);
+		write(1, " \033[32mOK\033[0m\n", 13);
 		return 0;
 	}
-		write(1,"FAIL\n", 5);
+	write(1, " \033[31mFAIL\033[0m\n", 15);
 	return 1;
 }
 
@@ -59,10 +59,10 @@ int	test_isalnum() {
 	}
 
 	if (error == 0) {
-		write(1, "OK\n", 3);
+		write(1, " \033[32mOK\033[0m\n", 13);
 		return 0;
 	}
-		write(1,"FAIL\n", 5);
+	write(1, " \033[31mFAIL\033[0m\n", 15);
 	return 1;
 }
 int	test_isdigit() {
@@ -85,10 +85,10 @@ int	test_isdigit() {
 	}
 
 	if (error == 0) {
-		write(1, "OK\n", 3);
+		write(1, " \033[32mOK\033[0m\n", 13);
 		return 0;
 	}
-		write(1,"FAIL\n", 5);
+	write(1, " \033[31mFAIL\033[0m\n", 15);
 	return 1;
 }
 int	test_isprint() {
@@ -111,10 +111,10 @@ int	test_isprint() {
 	}
 
 	if (error == 0) {
-		write(1, "OK\n", 3);
+		write(1, " \033[32mOK\033[0m\n", 13);
 		return 0;
 	}
-	write(1,"FAIL\n", 5);
+	write(1, " \033[31mFAIL\033[0m\n", 15);
 	return 1;
 }
 int	test_isascii() {
@@ -137,9 +137,9 @@ int	test_isascii() {
 	}
 
 	if (error == 0) {
-		write(1, "OK\n", 3);
+		write(1, " \033[32mOK\033[0m\n", 13);
 		return 0;
 	}
-		write(1,"FAIL\n", 5);
+	write(1, " \033[31mFAIL\033[0m\n", 15);
 	return 1;
 }

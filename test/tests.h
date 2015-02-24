@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:18:23 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/24 17:28:45 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/24 20:44:54 by matguig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <string.h>
 #include "../libft.h"
 
 int		test_isalpha();
