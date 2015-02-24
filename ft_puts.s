@@ -6,7 +6,7 @@
 ;   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/18 18:24:22 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/19 15:31:24 by cdannapp         ###   ########.fr         ;
+;   Updated: 2015/02/24 15:57:04 by cdannapp         ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -15,7 +15,7 @@
 %define STDOUT		1
 
 section .data
-	nwln:
+	retline:
 		db 0xa,0   ;new line
 
 section .text           					;Code Segment
@@ -27,6 +27,8 @@ _ft_puts:
 	mov rbp, rsp
 	sub rsp, 16
 
+	or rdi, rdi
+	jz end
 	mov r15, rdi						; on met l'argument de puts qui est dans rdi dans rsi pour qu'il soit l'argument du write
 	call _ft_strlen						; on compte la longueur de rdi
 	mov rdx, rax						; on recupere la longueur de la chaine (dans rax) comme troisieme argument de write (dans rdx)
@@ -40,9 +42,11 @@ _ft_puts:
 	jl end
 	mov rdx, 1
 	mov rdi, STDOUT
-	mov rsi, nwln
+	mov rsi, retline
 	mov rax, FTCALL(4)					;4 pour write
 	syscall
+
+	null:
 	end:
 		mov rax, r15
 		leave
