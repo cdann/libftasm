@@ -35,4 +35,8 @@ int		test_bzero(int lenght);
 
 int		test_strlen(char *str);
 int 	test_strcpy(char *str);
+
+int 	test_toupper();
+int 	test_tolower();
+
 #endif
