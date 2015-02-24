@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_thomas.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thoraffr <thoraffr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 14:51:47 by thoraffr          #+#    #+#             */
-/*   Updated: 2015/02/13 17:55:47 by thoraffr         ###   ########.fr       */
+/*   Updated: 2015/02/24 16:20:44 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,13 +193,13 @@ int		main()
 	c = ft_toupper('r');
 	write(1, &c, 1);
 	write(1, "\n", 1);
-	
+
 	write(1, "ft_toupper('O'): ", 17);
 	c = ft_toupper('O');
 	write(1, &c, 1);
 	write(1, "\n", 1);
 	write(1, "\n", 1);
-	
+
 	write(1, "ft_tolower('A'): ", 17);
 	c = ft_tolower('A');
 	write(1, &c, 1);

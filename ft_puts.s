@@ -6,7 +6,7 @@
 ;   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/18 18:24:22 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/24 15:57:04 by cdannapp         ###   ########.fr         ;
+;   Updated: 2015/02/24 16:56:45 by cdannapp         ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -15,8 +15,8 @@
 %define STDOUT		1
 
 section .data
-	retline:
-		db 0xa,0   ;new line
+	retline	db 0xa,0   ;new line
+	null db "(null)"
 
 section .text           					;Code Segment
 	   extern _ft_strlen
@@ -28,26 +28,39 @@ _ft_puts:
 	sub rsp, 16
 
 	or rdi, rdi
-	jz end
-	mov r15, rdi						; on met l'argument de puts qui est dans rdi dans rsi pour qu'il soit l'argument du write
-	call _ft_strlen						; on compte la longueur de rdi
-	mov rdx, rax						; on recupere la longueur de la chaine (dans rax) comme troisieme argument de write (dans rdx)
-	mov rdi, STDOUT
-	lea rsi, [rel r15]
-	mov rax, FTCALL(4)					;4 pour write
-	syscall
-	mov r15, rax
+	jz _null
 
-	cmp rax, 0
-	jl end
-	mov rdx, 1
-	mov rdi, STDOUT
-	mov rsi, retline
-	mov rax, FTCALL(4)					;4 pour write
-	syscall
+	exe:
+		mov r15, rdi						; on met l'argument de puts qui est dans rdi dans rsi pour qu'il soit l'argument du write
+		call _ft_strlen						; on compte la longueur de rdi
 
-	null:
+		mov rdx, rax						; on recupere la longueur de la chaine (dans rax) comme troisieme argument de write (dans rdx)
+		mov rdi, STDOUT
+		lea rsi, [rel r15]
+		mov rax, FTCALL(4)					;4 pour write
+		syscall
+		mov r15, rax
+
+		cmp rax, 0
+		jl false
+		mov rdx, 1
+		mov rdi, STDOUT
+		mov rsi, retline
+		mov rax, FTCALL(4)					;4 pour write
+		syscall
+
+	true:
+		mov rax, 10
+		jmp end
+
+	false:
+		mov rax, -1
+		jmp end
+
 	end:
-		mov rax, r15
 		leave
 		ret
+
+	_null:
+		mov rdi, null
+		jmp exe

@@ -6,11 +6,12 @@
 /*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 14:32:45 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/22 15:38:01 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/24 17:15:17 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <fcntl.h>
 #include "libft.h"
 
 //extern void *ft_memset(void *b, int c, size_t len);
@@ -31,23 +32,28 @@ void	test_puts();
 void	test_strcpy();
 void	test_memset();
 void	test_bzero();
-void	test_memcpy();
+void	test_memcpy(int lenght);
 void	test_strdup();
 
 
 int		main(void)
 {
-	//test_isalpha();
-	//test_isalnum();
-	//test_isdigit();
-	//test_isprint();
-	//test_isascii();
-	//test_toupper();
-	//test_tolower();
-//
-//	test_memcpy();
+	test_isalpha();
+	test_isalnum();
+	test_isdigit();
+	test_isprint();
+	test_isascii();
+	test_toupper();
+	test_tolower();
+	test_puts();
+	test_memcpy(10);
+	test_memcpy(30);
+	//test_memcpy(60);
 	test_strdup();
-	//test_puts();
+
+//
+//	;
+	//test_strdup();
 	//test_strcatandchicken();
 	//test_memset();
 	//test_bzero();
@@ -221,8 +227,6 @@ void	test_tolower() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_tolower() -> ", 26);
-
 	i = 0;
 	error = 0;
 
@@ -235,25 +239,42 @@ void	test_tolower() {
 	}
 
 	if (error == 0)
-		write(1, "OK\n", 3);
+		write(1, "@ Test of ft_tolower() -> OK\n", 29);
 	else
-		write(1,"FAIL\n", 5);
+		write(1,"@ Test of ft_tolower() -> FAIL\n", 31);
 	return;
 }
 
 void	test_puts() {
-	int		i;
-	int 	error;
+	char	*str1 = "« On ne dit pas de mal devant celui qui n'éсοutе раs. » - Saint Augustin";
+	char	*str2 = NULL;
+	char	*str3 = "";
+
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_puts() -> ", 23);
+	write(1, "@ Test of ft_puts() -> \n", 24);
 
-	official = puts("boum");
-	personal = ft_puts("boum");
+	write(1, "test #1 :\n :> ", 14);
+	official = puts(str1);
+	write(1, " :> ", 4);
+	personal = ft_puts(str1);
+	if (official != personal)
+		write(1,"FAIL\n", 5);
 
-	if (personal != official)
-		printf("\n[DIFF] %d vs %d\n", personal, official);
+	write(1, "test #2 :\n :> ", 14);
+	official = puts(str2);
+	write(1, " :> ", 4);
+	personal = ft_puts(str2);
+	if (official != personal)
+		write(1,"FAIL\n", 5);
+
+	write(1, "test #3 :\n :> ", 14);
+	official = puts(str3);
+	write(1, " :> ", 4);
+	personal = ft_puts(str3);
+	if (official != personal)
+		write(1,"FAIL\n", 5);
 
 	return ;
 }
@@ -353,22 +374,34 @@ void	test_bzero(){
 	}
 }
 
-void test_memcpy(){
+void test_memcpy(int lenght){
 	char src[20];
-	char dest[50];
+	char dest1[50];
+	char dest2[50];
 
+	write(1, "@ Test of ft_memcpy() -> ", 25);
 
 	memset(src, 'o', 20);
-	memset(dest, 'w', 50);
+	memset(dest1, 'w', 50);
+	memset(dest2, 'w', 50);
 	src[19] = '\0';
-	dest[49] = '\0';
-	printf("%s\t%s\n",  dest, src);
-	//ft_memcpy(dest, src, 10);
-	printf("%s %s\n", ft_memcpy(dest, src, 10), dest);
+	dest1[49] = '\0';
+	dest2[49] = '\0';
+
+	ft_memcpy(dest1, src, lenght);
+	memcpy(dest2, src, lenght);
+
+	if (strcmp(dest1, dest2))
+		write(1,"FAIL\n", 5);
+	else
+		write(1,"OK\n", 3);
+
 }
 
 void test_strdup(){
 	char	*s;
+
+	write(1, "@ Test of ft_strdup() -> \n", 26);
 
 	s = ft_strdup("edryftugyhiujokyethgfhbkjnmk,\nblop");
 	printf("%s\n", s);
