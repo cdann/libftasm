@@ -6,7 +6,7 @@
 #    By: matguig <matguig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/02/24 20:45:20 by matguig          ###   ########.fr        #
+#    Updated: 2015/02/24 21:04:06 by matguig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -64,6 +64,9 @@ $(NAME): $(OBJ)
 test: re $(OBJ_TESTS)
 	@gcc -c test/tests.c -o test/test.o
 	@ld test/test.o $(OBJ_TESTS) -L. -lft -macosx_version_min 10.8 -lSystem -o tester
+	@rm -f $(OBJ_TESTS)
+	@rm -f test/test.o
+	@echo "\033[31m  Objets tests SUPPRESSION \033[0m"
 	@echo "\033[32m  ** Execution des tests :) ** \033[0m"
 	@./tester
 
