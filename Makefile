@@ -38,6 +38,7 @@ SRC_TESTS = test/tests_is.c \
 			test/tests_various.c \
 			test/tests_str.c \
 			test/tests_to.c \
+			test/tests_bonus.c
 
 
 

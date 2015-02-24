@@ -43,4 +43,7 @@ int 	test_tolower();
 
 void 	test_cat();
 
+int 	test_isupper();
+int 	test_islower();
+
 #endif
