@@ -46,8 +46,10 @@ $(NAME): $(OBJ)
 	@echo "\033[32m  ** Lib ASM créée ** \033[0m"
 
 test: re
-	gcc main.c -L. -lft -mdynamic-no-pic -o tester
-	./tester
+	@gcc -c main_thomas.c -o main.o
+	@ld main.o -L. -lft -macosx_version_min 10.8 -lSystem -o tester
+	@echo "\033[32m  ** Execution des tests :) ** \033[0m"
+	@./tester
 
 
 clean:
