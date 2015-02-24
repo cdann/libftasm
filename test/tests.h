@@ -25,4 +25,7 @@ int		test_isdigit();
 int		test_isprint();
 int		test_isascii();
 
+int		test_memcpy(int lenght);
+int		test_memset(int lenght);
+int		test_bzero(int lenght);
 #endif
