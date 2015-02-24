@@ -33,6 +33,7 @@ SRC = ft_strlen.s \
 
 SRC_TESTS = test/tests_is.c \
 			test/tests_mem.c \
+			test/tests_str.c \
 
 
 
