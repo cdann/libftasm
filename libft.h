@@ -18,7 +18,6 @@ extern char 	*ft_memcpy(void *st1, const void *st2, size_t n);
 extern char		*ft_strcpy(char *s1, const char *s2);
 extern int		ft_puts(const char *s);
 extern void		ft_cat(unsigned int fd);
-//extern int		ft_cat(unsigned int fd);
 extern int		ft_toupper(int lt);
 extern int		ft_tolower(int lt);
 extern char 	*ft_strcat(char *s1, const char *s2);
