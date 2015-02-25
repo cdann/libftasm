@@ -6,7 +6,7 @@
 ;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/18 18:24:22 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/25 21:47:12 by matguig          ###   ########.fr         ;
+;   Updated: 2015/02/26 00:42:34 by matguig          ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -26,6 +26,8 @@ _ft_puts:
 	enter 16, 0
 	pushf
 
+	mov r14, rdi
+
 	or rdi, rdi
 	jz _null
 
@@ -42,6 +44,10 @@ _ft_puts:
 
 		cmp rax, 0
 		jl false
+
+		or r14, r14
+		jz true
+
 		mov rdx, 1
 		mov rdi, STDOUT
 		mov rsi, retline
