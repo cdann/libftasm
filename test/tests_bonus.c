@@ -19,17 +19,14 @@ int	test_isupper() {
 	int		personal;
 
 	write(1, "@ Test of ft_isupper() -> ", 26);
-
 	i = 0;
 	error = 0;
 
 	while (i < 128) {
 		official = isupper(i);
 		personal = ft_isupper(i);
-		if (personal != official) {
-			printf("%d -> %d / %d\n", i, personal, official);
+		if (personal != official)
 			error++;
-		}
 		i++;
 	}
 
@@ -55,10 +52,8 @@ int	test_islower() {
 	while (i < 128) {
 		official = islower(i);
 		personal = ft_islower(i);
-		if (personal != official) {
-			printf("%d -> %d / %d\n", i, personal, official);
+		if (personal != official)
 			error++;
-		}
 		i++;
 	}
 
