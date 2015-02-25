@@ -1,10 +1,22 @@
+; **************************************************************************** ;
+;                                                                              ;
+;                                                        :::      ::::::::     ;
+;   ft_strdup.s                                        :+:      :+:    :+:     ;
+;                                                    +:+ +:+         +:+       ;
+;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
+;                                                +#+#+#+#+#+   +#+             ;
+;   Created: 2015/02/25 18:24:27 by matguig           #+#    #+#               ;
+;   Updated: 2015/02/25 21:48:27 by matguig          ###   ########.fr         ;
+;                                                                              ;
+; **************************************************************************** ;
+
 section        .text
 	global		_ft_strdup
 	extern		_malloc
 	extern		_ft_strlen
 	extern		_ft_memcpy
 
-;ici rdi = str
+
 _ft_strdup:
 	enter 16,0
 
