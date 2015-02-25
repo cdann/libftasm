@@ -6,9 +6,11 @@
 ;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/19 15:34:49 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/25 21:47:37 by matguig          ###   ########.fr         ;
+;   Updated: 2015/02/25 22:35:43 by matguig          ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
+
+;strcat rdi = dest rdx = src 
 
 section .text
 	global _ft_strcat
@@ -19,17 +21,17 @@ _ft_strcat:
 	pushf
 
 	mov r12, rdi
-	call _ft_strlen
+	call _ft_strlen		;on appelle strlen avec la chaine envoyee
 	mov	r15, rax
 	mov rax, r12
 	mov rdi, r12
-	mov rcx, 0
+	mov rcx, 0			;on met rcx a 0 pour pouvoir s'en servir d'index
 	beginloop:
 		mov bl, [rsi]
-		cmp bl, 0
+		cmp bl, 0		;on verifie chaque bite de src voir si c'est la fin de la string
 		je end
 		mov [rdi + r15], bl
-		inc rsi
+		inc rsi	
 		inc r15
 		jmp beginloop
 	end:

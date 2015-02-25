@@ -6,7 +6,7 @@
 ;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/24 20:32:33 by matguig           #+#    #+#               ;
-;   Updated: 2015/02/25 21:45:55 by matguig          ###   ########.fr         ;
+;   Updated: 2015/02/25 22:18:28 by matguig          ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -14,10 +14,10 @@ section	.text
 	global	_ft_isupper
 
 _ft_isupper:
-	enter 16, 0
+	enter 16, 0 		;initialisation
 	pushf
 
-	cmp	rdi, 65
+	cmp	rdi, 65	
 	jl	isFalse
 	cmp	rdi, 91
 	jl	isTrue
@@ -29,6 +29,6 @@ _ft_isupper:
 		mov rax, 1
 
 	END:
-		popf
+		popf			;retour propre
 		leave
 		ret

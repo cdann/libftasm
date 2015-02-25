@@ -18,7 +18,7 @@ section .data
 	retline	db 0xa,0   ;new line
 	null db "(null)"
 
-section .text           					;Code Segment
+section .text
 	   extern _ft_strlen
 	   global _ft_puts
 
