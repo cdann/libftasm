@@ -13,9 +13,13 @@
 #include "tests.h"
 
 int		test_memcpy(int lenght) {
-	char src[20];
-	char dest1[50];
-	char dest2[50];
+	char *src;
+	char *dest1;
+	char *dest2;
+
+	src = (char*) malloc(sizeof(char) * 20);
+	dest1 = (char*) malloc(sizeof(char) * 50);
+	dest2 = (char*) malloc(sizeof(char) * 50);
 
 	write(1, "@ Test of ft_memcpy()  -> ", 26);
 
@@ -28,7 +32,6 @@ int		test_memcpy(int lenght) {
 
 	ft_memcpy(dest1, src, lenght);
 	memcpy(dest2, src, lenght);
-
 	if (strcmp(dest1, dest2)) {
 		write(1, " \033[31mFAIL\033[0m\n", 15);
 		return 0;
@@ -38,9 +41,11 @@ int		test_memcpy(int lenght) {
 }
 
 int		test_memset(int lenght) {
-	char	str1[9];
-	char	str2[9];
+	char	*str1;
+	char	*str2;
 
+	str1 = (char*) malloc(sizeof(char) * 9);
+	str2 = (char*) malloc(sizeof(char) * 9);
 
 	write(1, "@ Test of ft_memset()  -> ", 26);
 	bzero(str1, 9);
