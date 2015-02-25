@@ -6,7 +6,7 @@
 /*   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 20:32:09 by matguig           #+#    #+#             */
-/*   Updated: 2015/02/25 19:03:19 by matguig          ###   ########.fr       */
+/*   Updated: 2015/02/26 00:28:01 by matguig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,20 @@ int	test_pow(){
 		return 0;
 	}
 	write(1, " \033[31mFAIL\033[0m\n", 15);
+	return 1;
+}
+
+int		test_putstr_fd(char *str, int fd) {
+
+	write(1, "\033[4mft_puts() Results :\033[0m \n", 29);
+
+	write(1, "\033[35m personal :> \033[0m", 22);
+	ft_putstr_fd(str, fd);
+	write(1, "\033[35m$\n\033[0m", 11);
+
+	write(1, "@ Test of ft_putstr_fd()->", 26);
+
+
+	write(1, " \033[33mCHECK\033[0m\n", 16);
 	return 1;
 }

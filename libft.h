@@ -26,5 +26,6 @@ extern char 	*ft_strcat(char *s1, const char *s2);
 extern int		ft_isupper(int c);
 extern int		ft_islower(int c);
 extern int		ft_pow(int nb, int pow);
+extern int		ft_putstr_fd(char *str, int fd);
 
 #endif

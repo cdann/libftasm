@@ -46,5 +46,6 @@ void 	test_cat();
 int 	test_isupper();
 int 	test_islower();
 int		test_pow();
+int		test_putstr_fd(char *str, int fd);
 
 #endif

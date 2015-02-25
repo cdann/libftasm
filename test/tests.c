@@ -6,7 +6,7 @@
 /*   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:29:52 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/25 22:00:35 by matguig          ###   ########.fr       */
+/*   Updated: 2015/02/26 00:40:05 by matguig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ int main(void)
 
 	test_pow();
 
+	test_putstr_fd("« On crie pour taire ce qui crie. » - Henri Michaux", 1);
+	test_putstr_fd("« Réfléchis avec lenteur, mais exécute rapidеmеnt tеs déсisiοns. » - Isocrate", 1);
+	test_putstr_fd("« Les gens bien portants sont des malades qui s'ignοrеnt. » - Jules Romains", 1);
+	test_putstr_fd(NULL, 1);
+	test_putstr_fd("", 1);
 
 	test_cat();
 	return 0;

@@ -6,7 +6,7 @@
 #    By: matguig <matguig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/02/24 21:04:06 by matguig          ###   ########.fr        #
+#    Updated: 2015/02/26 00:19:34 by matguig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -32,6 +32,7 @@ SRC = ft_strlen.s \
 	  ft_isupper.s \
 	  ft_islower.s \
 	  ft_pow.s \
+	  ft_putstr_fd.s \
 
 
 SRC_TESTS = test/tests_is.c \
