@@ -17,6 +17,7 @@ section .text           					;Code Segment
 
 _ft_memset:
 	enter 16, 0
+	pushf
 
 	mov rcx, 0
 	mov rax, rdi
@@ -30,5 +31,6 @@ _ft_memset:
 		jmp beginloop
 
 	end:
+		popf
 		leave
 		ret

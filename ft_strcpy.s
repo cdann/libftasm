@@ -15,6 +15,8 @@ section        .text
 
 	_ft_strcpy:
 		enter 16, 0
+		pushf
+
 		mov rax, rdi
 		beginloop:
 			mov rcx,[rsi]
@@ -25,6 +27,7 @@ section        .text
 			inc rdi
 			jmp beginloop
 		end:
+			popf
 			leave
 			ret
 

@@ -28,8 +28,6 @@ _ft_strdup:
 	mov rdi, r12
 	call _malloc
 
-					; ici r15 = str r12 = strlen(str) [rax] le pointeur sur la zone allouee
-					;si je veux utiliser memcpy rdi = dest rsi = src rdx = n
 	mov rdi, rax
 	mov r14, rdi
 	mov rsi, r15

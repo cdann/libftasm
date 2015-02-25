@@ -23,9 +23,8 @@ section .text           					;Code Segment
 	   global _ft_puts
 
 _ft_puts:
-	push rbp
-	mov rbp, rsp
-	sub rsp, 16
+	enter 16, 0
+	pushf
 
 	or rdi, rdi
 	jz _null
@@ -58,6 +57,7 @@ _ft_puts:
 		jmp end
 
 	end:
+		popf
 		leave
 		ret
 

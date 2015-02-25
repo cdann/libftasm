@@ -15,8 +15,7 @@ section .text           					;Code Segment
 
 _ft_toupper:
 	enter   16, 0
-
-	mov rcx, 0
+	pushf
 
 	cmp rdi, 'a'
 	jl end
@@ -27,6 +26,8 @@ _ft_toupper:
 
 	end:
 		mov rax, rdi
+
+		popf
 		leave
 		ret
 

@@ -15,6 +15,7 @@ section	.text
 
 _ft_isalnum:
 	enter 16, 0
+	pushf
 
 	cmp	rdi, 48
 	jl	isFalse
@@ -33,10 +34,11 @@ _ft_isalnum:
 
 	isFalse:
 		mov rax, 0
-		jmp END
+		jmp end
 	isTrue:
 		mov rax, 1
 
-	END:
+	end:
+		popf
 		leave
 		ret

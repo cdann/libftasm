@@ -15,6 +15,7 @@ section .text
 
 _ft_isprint:
 	enter 16, 0
+	pushf
 	mov rax, 1
 
 	cmp rdi, 32
@@ -27,5 +28,7 @@ _ft_isprint:
 		mov rax, 0
 
 	end:
+		popf
 		leave
 		ret
+

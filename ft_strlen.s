@@ -15,11 +15,10 @@ section .text           					;Code Segment
 
 
 _ft_strlen:
-	push rbp
-	mov rbp, rsp
-	sub rsp, 16
+	enter 16, 0
+	pushf
+
 	mov rax, 0							;put 0 in return register
-	;mov r15, 0							;a quoi ca sert?
 	beginloop:
 		mov bl, [rdi]
 		cmp bl, 0
@@ -28,5 +27,6 @@ _ft_strlen:
 		inc rdi
 		jmp beginloop					;go back to bginning
 	end:
+		popf
 		leave
 		ret								;return result;

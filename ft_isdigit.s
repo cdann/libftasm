@@ -15,6 +15,7 @@
 
  _ft_isdigit:
  	enter 16, 0
+ 	pushf
  	mov rax, 1
  
  	cmp rdi, 48
@@ -27,5 +28,6 @@
  		mov rax, 0
 
  	end:
+ 		popf
 	 	leave
 	 	ret

@@ -15,6 +15,8 @@ section        .text
 
 	_ft_memcpy:
 		enter 16, 0
+		pushf
+
 		mov rax, rdi
 		mov rcx, 0
 		beginloop:
@@ -26,7 +28,8 @@ section        .text
 			je end
 			inc rcx
 			jmp beginloop
+
 		end:
-			;mov rax, rcx
+			popf
 			leave
 			ret

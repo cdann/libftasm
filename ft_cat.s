@@ -26,7 +26,7 @@ section .text
 
 _ft_cat:
 	enter 16, 0
-
+	pushf
 
 	beginloop:
 		mov r15, rdi
@@ -60,14 +60,6 @@ _ft_cat:
 		jmp beginloop
 
 	end:
-		;mov rdi, buf
-		;call _ft_strlen
-		;mov rdx, rax
-
-		;mov rax, FTCALL(WRITE)
-		;mov rdi, STDOUT
-		;mov rsi, buf
-		;syscall
-
+		popf
 		leave
 		ret

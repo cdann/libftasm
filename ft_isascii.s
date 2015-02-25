@@ -15,9 +15,8 @@ section .text
 
 
 _ft_isascii:
-	push rbp
-	mov rbp, rsp
-	sub rsp, 16
+	enter 16, 0
+	pushf
 	mov rax, 1
 
 	cmp rdi, 0
@@ -31,5 +30,6 @@ _ft_isascii:
 		jmp end
 
 	end:
+		popf
 		leave
-		ret								;return result;
+		ret

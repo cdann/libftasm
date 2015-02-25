@@ -15,13 +15,17 @@ section .text
 
 _ft_tolower:
 	enter 16, 0
+	pushf
 
 	cmp rdi, 'A'
 	jl end
 	cmp rdi, 'Z'
 	jg end
 	add rdi, 32
+	
 	end:
 		mov rax, rdi
+
+		popf
 		leave
 		ret

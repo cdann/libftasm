@@ -15,6 +15,7 @@ section	.text
 
 _ft_islower:
 	enter 16, 0
+	pushf
 
 	cmp	rdi, 97
 	jl	isFalse
@@ -28,5 +29,6 @@ _ft_islower:
 		mov rax, 1
 
 	END:
+		popf
 		leave
 		ret

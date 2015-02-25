@@ -16,13 +16,13 @@ section .text
 
 _ft_strcat:
 	enter 16, 0
+	pushf
 
 	mov r12, rdi
 	call _ft_strlen
 	mov	r15, rax
 	mov rax, r12
 	mov rdi, r12
-	;rdi = dest ;rsi = src
 	mov rcx, 0
 	beginloop:
 		mov bl, [rsi]
@@ -35,6 +35,6 @@ _ft_strcat:
 	end:
 		mov bl, 0
 		mov [rdi+ r15], bl
-		;mov rax, r15
+		popf
 		leave
 		ret

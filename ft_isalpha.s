@@ -15,9 +15,8 @@ section .text
 
 
 _ft_isalpha:
-	push rbp
-	mov rbp, rsp
-	sub rsp, 16
+	enter 16, 0
+	pushf
 	mov rax, 0
 
 	cmp rdi, 'A'
@@ -39,5 +38,6 @@ _ft_isalpha:
 		jmp end
 
 	end:
+		popf
 		leave
-		ret								;return result;
+		ret
