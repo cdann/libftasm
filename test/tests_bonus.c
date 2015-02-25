@@ -64,3 +64,31 @@ int	test_islower() {
 	write(1, " \033[31mFAIL\033[0m\n", 15);
 	return 1;
 }
+
+int	test_pow(){
+	int 	i;
+	int 	x;
+	int 	error;
+
+	write(1, "@ Test of ft_pow()     -> ", 26);
+	i = 0;
+	x = 0;
+	error = 0;
+
+	while (i < 10) {
+		while(x < 10) {
+			if (pow(i, x) != ft_pow(i, x)) 
+				error++;
+			x++;
+		}
+		i++;
+		x = 0;
+	}
+
+	if (error == 0) {
+		write(1, " \033[32mOK\033[0m\n", 13);
+		return 0;
+	}
+	write(1, " \033[31mFAIL\033[0m\n", 15);
+	return 1;
+}

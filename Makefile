@@ -30,7 +30,8 @@ SRC = ft_strlen.s \
 	  ft_strdup.s \
 	  ft_cat.s \
 	  ft_isupper.s \
-	  ft_islower.s
+	  ft_islower.s \
+	  ft_pow.s \
 
 
 SRC_TESTS = test/tests_is.c \

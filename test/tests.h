@@ -6,7 +6,7 @@
 /*   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:18:23 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/24 20:44:54 by matguig          ###   ########.fr       */
+/*   Updated: 2015/02/26 00:19:20 by matguig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void 	test_cat();
 
 int 	test_isupper();
 int 	test_islower();
+int		test_pow();
 
 #endif

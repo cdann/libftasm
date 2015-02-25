@@ -75,6 +75,8 @@ int main(void)
 	| * Perso    : Segmentation fault									|
 	\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+	test_pow();
+
 
 	test_cat();
 	return 0;

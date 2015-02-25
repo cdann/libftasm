@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <math.h>
 
 extern size_t	ft_strlen(const char *s);
 extern int		ft_isalpha(int t);
@@ -22,7 +23,8 @@ extern int		ft_toupper(int lt);
 extern int		ft_tolower(int lt);
 extern char 	*ft_strcat(char *s1, const char *s2);
 
-extern int     ft_isupper(int c);
-extern int     ft_islower(int c);
+extern int		ft_isupper(int c);
+extern int		ft_islower(int c);
+extern int		ft_pow(int nb, int pow);
 
 #endif
