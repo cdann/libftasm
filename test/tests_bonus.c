@@ -6,7 +6,7 @@
 /*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 20:32:09 by matguig           #+#    #+#             */
-/*   Updated: 2015/02/26 17:10:50 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/26 17:32:08 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,21 @@ int		test_putstr_fd(char *str, int fd) {
 
 	write(1, " \033[33mCHECK\033[0m\n", 16);
 	return 1;
+}
+
+int	test_strnew() {
+	char	*str;
+	char	*test;
+
+	write(1, "@ Test of ft_strnew()  -> ", 26);
+	str = ft_strnew(100);
+	test = (char*)malloc(101);
+	bzero(test, 101);
+	if(memcmp(str, test, 101))
+	{
+		write(1, " \033[31mFAIL\033[0m\n", 15);
+		return 1;
+	}
+	write(1, " \033[32mOK\033[0m\n", 13);
+	return 0;
 }
