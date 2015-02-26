@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:18:23 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/26 00:19:20 by matguig          ###   ########.fr       */
+/*   Updated: 2015/02/26 16:30:22 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int 	test_isupper();
 int 	test_islower();
 int		test_pow();
 int		test_putstr_fd(char *str, int fd);
+int		test_strnew();
 
 #endif

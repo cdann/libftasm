@@ -27,5 +27,5 @@ extern int		ft_isupper(int c);
 extern int		ft_islower(int c);
 extern int		ft_pow(int nb, int pow);
 extern int		ft_putstr_fd(char *str, int fd);
-
+extern char		*ft_strnew(size_t size);
 #endif

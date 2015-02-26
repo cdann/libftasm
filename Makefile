@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matguig <matguig@student.42.fr>            +#+  +:+       +#+         #
+#    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/02/26 00:19:34 by matguig          ###   ########.fr        #
+#    Updated: 2015/02/26 16:24:46 by cdannapp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -33,6 +33,7 @@ SRC = ft_strlen.s \
 	  ft_islower.s \
 	  ft_pow.s \
 	  ft_putstr_fd.s \
+	  ft_strnew.s
 
 
 SRC_TESTS = test/tests_is.c \
