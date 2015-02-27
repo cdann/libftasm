@@ -6,7 +6,7 @@
 ;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/20 14:39:23 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/25 22:24:14 by matguig          ###   ########.fr         ;
+;   Updated: 2015/02/27 16:32:16 by matguig          ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -27,6 +27,9 @@ section .text
 _ft_cat:
 	enter 16, 0					;initialisation
 	pushf
+
+	cmp edi, 0
+	jl end
 
 	beginloop:
 		mov r15, rdi			;on sauve rdi (le filedescriptor) pour s'en servir apres
