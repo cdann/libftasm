@@ -6,7 +6,7 @@
 /*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:29:52 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/27 17:06:37 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/27 17:27:31 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int main(void)
 	partie2();
 	write(1, "\n\n\033[44;7m**** Partie Bonus ****\033[0m\n\n", 38);
 	partieBonus();
-	write(1, "\n\n\033[44;7m**** Partie 3 ****\033[0m\n\n", 35);
+	write(1, "\n\n\033[44;7m**** Partie 3 ****\033[0m\n\n", 34);
 	partie3();
 	return 0;
 }
