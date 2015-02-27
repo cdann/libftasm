@@ -6,7 +6,7 @@
 /*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 17:18:23 by cdannapp          #+#    #+#             */
-/*   Updated: 2015/02/27 16:45:26 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/27 16:53:51 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int 	test_strcpy(char *str);
 int 	test_toupper();
 int 	test_tolower();
 
-void 	test_cat();
+void 	test_cat(int fd);
 
 int 	test_isupper();
 int 	test_islower();

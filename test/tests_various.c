@@ -6,7 +6,7 @@
 /*   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 18:03:11 by matguig           #+#    #+#             */
-/*   Updated: 2015/02/27 16:49:01 by cdannapp         ###   ########.fr       */
+/*   Updated: 2015/02/27 16:56:16 by cdannapp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,9 @@ int		test_strlen(char *str) {
 	return 1;
 }
 
-void 	test_cat() {
-	//int		fd;
+void 	test_cat(int fd) {
+	write(1, "@ Test of ft_cat()     -> \n", 27);
+	ft_cat(fd);
 
-	//char	buf[30];
-	//int		ret;
-
-	write(1, "@ Test of ft_cat()     -> ", 26);
-
-	//fd = open("./test/files/cat.test", O_RDONLY);
-	//write(1, "\033[33m Read from cat.test \033[0m\n", 31);
-
-	//ft_cat(fd);
-	//close(fd);
-
-	write(1, "\033[33m Read from -42 file desc\033[0m\n", 34);
-	ft_cat(-42);
-
-
-	write(1, "\033[33mType any words and press enter\033[0m\n", 40);
-	ft_cat(0);
 	return ;
 }
