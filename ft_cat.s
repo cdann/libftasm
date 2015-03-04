@@ -3,10 +3,10 @@
 ;                                                        :::      ::::::::     ;
 ;   ft_cat.s                                           :+:      :+:    :+:     ;
 ;                                                    +:+ +:+         +:+       ;
-;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
+;   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/20 14:39:23 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/27 16:32:16 by matguig          ###   ########.fr         ;
+;   Updated: 2015/03/04 15:34:38 by cdannapp         ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -34,7 +34,7 @@ _ft_cat:
 	beginloop:
 		mov r15, rdi			;on sauve rdi (le filedescriptor) pour s'en servir apres
 
-		mov rdi, buf
+		lea rdi, [rel buf]
 		mov rsi, 0
 		mov rdx, BUFFER_SIZE
 		call _ft_memset			; on met tous les octets de buf a 0
@@ -42,7 +42,7 @@ _ft_cat:
 		mov rdi, r15
 
 		mov rax, FTCALL(READ)
-		mov rsi, buf			; Stock dans buf
+		lea rsi, [rel buf]			; Stock dans buf
 		mov rdx, BUFFER_SIZE
 		syscall					; on lit dans le fd BUFFER_SIZE octets qu'on met dans buf
 
@@ -54,7 +54,7 @@ _ft_cat:
 
 		mov rax, FTCALL(WRITE)
 		mov rdi, STDOUT
-		mov rsi, buf
+		lea rsi, [rel buf]
 		syscall					; on ecrit les caractere sur la  sortie standard
 
 		mov rdi, r15
