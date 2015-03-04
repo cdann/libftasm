@@ -3,10 +3,10 @@
 ;                                                        :::      ::::::::     ;
 ;   ft_strdup.s                                        :+:      :+:    :+:     ;
 ;                                                    +:+ +:+         +:+       ;
-;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
+;   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
 ;   Created: 2015/02/25 18:24:27 by matguig           #+#    #+#               ;
-;   Updated: 2015/02/25 21:48:27 by matguig          ###   ########.fr         ;
+;   Updated: 2015/03/04 15:40:51 by cdannapp         ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -29,10 +29,10 @@ _ft_strdup:
 	call _malloc
 
 	mov rdi, rax
-	mov r14, rdi
 	mov rsi, r15
-	mov rdx, r12
-	call _ft_memcpy
+	mov rcx, r12
+	cld
+	rep movsb
 
 end:
 	leave

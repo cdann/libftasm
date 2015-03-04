@@ -3,10 +3,10 @@
 ;                                                        :::      ::::::::     ;
 ;   ft_cat.s                                           :+:      :+:    :+:     ;
 ;                                                    +:+ +:+         +:+       ;
-;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
+;   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+          ;
 ;                                                +#+#+#+#+#+   +#+             ;
-;   Created: 2015/02/20 14:39:23 by matguig           #+#    #+#               ;
-;   Updated: 2015/03/04 15:35:41 by matguig          ###   ########.fr         ;
+;   Created: 2015/02/20 14:39:23 by cdannapp          #+#    #+#               ;
+;   Updated: 2015/03/04 15:47:37 by cdannapp         ###   ########.fr         ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -51,6 +51,7 @@ _ft_cat:
 		mov rdi, STDOUT
 		lea rsi, [rel buf]
 		syscall
+
 		jmp beginloop
 
 	end:
