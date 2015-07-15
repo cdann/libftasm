@@ -13,7 +13,7 @@
 #include "tests.h"
 
 int 	test_strdup(char *src) {
-	write(1, "@ Test of ft_strdup()  -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_strdup()  -> \033[0m", 26);
 
 	if (strcmp(strdup(src), ft_strdup(src))) {
 		write(1, " \033[31mFAIL\033[0m\n", 15);
@@ -27,7 +27,7 @@ int		test_strcat() {
 	char	str1[9];
 	char	str2[9];
 
-	write(1, "@ Test of ft_strcat()  -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_strcat()  -> \033[0m", 26);
 
 	bzero(str1, 9);
 	bzero(str2, 9);
@@ -55,7 +55,7 @@ int 	test_strcpy(char *str) {
 	char	str1[54];
 	char	str2[54];
 
-	write(1, "@ Test of ft_strcpy()  -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_strcpy()  -> \033[0m", 26);
 
 	bzero(str1, 54);
 	bzero(str2, 54);

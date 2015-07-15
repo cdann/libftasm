@@ -18,7 +18,7 @@ int	test_isupper() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_isupper() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_isupper() -> \033[0m", 26);
 	i = 0;
 	error = 0;
 
@@ -44,7 +44,7 @@ int	test_islower() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_islower() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_islower() -> \033[0m", 26);
 
 	i = 0;
 	error = 0;
@@ -70,7 +70,7 @@ int	test_pow(){
 	int 	x;
 	int 	error;
 
-	write(1, "@ Test of ft_pow()     -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_pow()     -> \033[0m", 26);
 	i = 0;
 	x = 0;
 	error = 0;
@@ -101,7 +101,7 @@ int		test_putstr_fd(char *str, int fd) {
 	ft_putstr_fd(str, fd);
 	write(1, "\033[35m$\n\033[0m", 11);
 
-	write(1, "@ Test of ft_putstr_fd()->", 26);
+	write(1, "\033[36;1m@ Test of ft_putstr_fd()->", 26);
 
 
 	write(1, " \033[33mCHECK\033[0m\n", 16);
@@ -112,7 +112,7 @@ int	test_strnew() {
 	char	*str;
 	char	*test;
 
-	write(1, "@ Test of ft_strnew()  -> ", 26);
+	write(1, "@ Test of ft_strnew()  -> \033[0m", 26);
 	str = ft_strnew(100);
 	test = (char*)malloc(101);
 	bzero(test, 101);

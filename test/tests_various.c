@@ -23,7 +23,7 @@ int		test_puts(char *str) {
 	write(1, "\033[35m personal :> \033[0m", 22);
 	personal = ft_puts(str);
 
-	write(1, "@ Test of ft_puts()    -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_puts()    -> \033[0m", 26);
 	if (official != personal) {
 		write(1, " \033[31mFAIL\033[0m\n", 15);
 		return 0;
@@ -39,7 +39,7 @@ int		test_strlen(char *str) {
 	official = strlen(str);
 	personal = ft_strlen(str);
 
-	write(1, "@ Test of ft_strlen()  -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_strlen()  -> \033[0m", 26);
 	if (official != personal) {
 		write(1, " \033[31mFAIL\033[0m\n", 15);
 		return 0;
@@ -49,7 +49,7 @@ int		test_strlen(char *str) {
 }
 
 void 	test_cat(int fd) {
-	write(1, "@ Test of ft_cat()     -> \n", 27);
+	write(1, "\033[36;1m@ Test of ft_cat()     -> \033[0m \n", 39);
 	ft_cat(fd);
 
 	return ;

@@ -18,7 +18,7 @@ int	test_isalpha() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_isalpha() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_isalpha() -> \033[0m", 26);
 
 	i = 0;
 	error = 0;
@@ -45,7 +45,7 @@ int	test_isalnum() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_isalnum() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_isalnum() -> \033[0m", 26);
 
 	i = 0;
 	error = 0;
@@ -71,7 +71,7 @@ int	test_isdigit() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_isdigit() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_isdigit() -> \033[0m", 26);
 
 	i = 0;
 	error = 0;
@@ -97,7 +97,7 @@ int	test_isprint() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_isprint() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_isprint() -> \033[0m", 26);
 
 	i = 0;
 	error = 0;
@@ -123,7 +123,7 @@ int	test_isascii() {
 	int		official;
 	int		personal;
 
-	write(1, "@ Test of ft_isascii() -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_isascii() -> \033[0m", 26);
 
 	i = 0;
 	error = 0;

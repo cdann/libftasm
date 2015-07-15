@@ -1,22 +1,24 @@
 ; **************************************************************************** ;
 ;                                                                              ;
-;                                                        :::      ::::::::     ;
-;   ft_puts.s                                          :+:      :+:    :+:     ;
-;                                                    +:+ +:+         +:+       ;
-;   By: matguig <matguig@student.42.fr>            +#+  +:+       +#+          ;
-;                                                +#+#+#+#+#+   +#+             ;
-;   Created: 2015/02/18 18:24:22 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/02/26 00:42:34 by matguig          ###   ########.fr         ;
+;                                                         :::      ::::::::    ;
+;    ft_puts.s                                          :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2015/02/18 18:24:22 by cdannapp          #+#    #+#              ;
+;    Updated: 2015/07/15 19:57:22 by cdannapp         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-
-%define FTCALL(nb)	0x2000000 | nb
+%define WRITE	0x2000004
 %define STDOUT		1
 
+;section .data
+;	retline	db 10   ;new line
+;	null db "(null)", 0
+
 section .data
-	retline	db 0xa,0   ;new line
-	null db "(null)"
+	nullstr		db	"(null)", 10
 
 section .text
 	   extern _ft_strlen
@@ -32,13 +34,13 @@ _ft_puts:
 	jz _null
 
 	exe:
-		mov r15, rdi						; on met l'argument de puts qui est dans rdi dans rsi pour qu'il soit l'argument du write
+		mov r15, rdi						
 		call _ft_strlen						; on compte la longueur de rdi
 
 		mov rdx, rax						; on recupere la longueur de la chaine (dans rax) comme troisieme argument de write (dans rdx)
 		mov rdi, STDOUT
-		lea rsi, [rel r15]
-		mov rax, FTCALL(4)					;4 pour write
+		lea rsi, [rel r15]					; on met l'argument de puts qui etait dans rdi dans rsi pour qu'il soit l'argument du write
+		mov rax, WRITE					
 		syscall
 		mov r15, rax
 
@@ -50,8 +52,8 @@ _ft_puts:
 
 		mov rdx, 1
 		mov rdi, STDOUT
-		mov rsi, retline
-		mov rax, FTCALL(4)					;4 pour write
+		lea rsi, [rel nullstr + 6]
+		mov rax, WRITE					
 		syscall
 
 	true:
@@ -68,5 +70,5 @@ _ft_puts:
 		ret
 
 	_null:
-		mov rdi, null
+		lea rdi, [rel nullstr]
 		jmp exe

@@ -10,21 +10,21 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-; ordre des arguments de fonction: rdi = str, rsi = c, rdx = n  retour: rax
 ; extern void		*ft_memset(void *str, int c, size_t n);
+; ordre des arguments de fonction: rdi = str, rsi = c, rdx = n  retour: rax
 
 section .text
 	global	_ft_memset
+	extern _ft_puts
 
 _ft_memset:
-	enter 16, 0
 	pushf
-
 	xor al, al
-	mov rax, rsi
-	mov rcx, rdx
+	mov rax, rsi ; rax sert de repere a stosb pour savoir le byte qu'iil doit copier 
+	mov rcx, rdx ; rcx est le nombre de fois ou rep sera utilise
+	mov r15, rdi
 	cld
-	rep stosb
+	rep stosb; stosb sera repeté, il va copier le byte de rax dans rdi
+	mov rax, r15
 	popf
-	leave
 	ret

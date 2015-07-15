@@ -21,7 +21,7 @@ int		test_memcpy(int lenght) {
 	dest1 = (char*) malloc(sizeof(char) * 50);
 	dest2 = (char*) malloc(sizeof(char) * 50);
 
-	write(1, "@ Test of ft_memcpy()  -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_memcpy()  -> \033[0m", 26);
 
 	memset(src, 'o', 20);
 	memset(dest1, 'w', 50);
@@ -47,7 +47,7 @@ int		test_memset(int lenght) {
 	str1 = (char*) malloc(sizeof(char) * 9);
 	str2 = (char*) malloc(sizeof(char) * 9);
 
-	write(1, "@ Test of ft_memset()  -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_memset()  -> \033[0m", 26);
 	bzero(str1, 9);
 	bzero(str2, 9);
 
@@ -67,7 +67,7 @@ int		test_bzero(int lenght) {
 	char	str2[9];
 
 
-	write(1, "@ Test of ft_bzero()   -> ", 26);
+	write(1, "\033[36;1m@ Test of ft_bzero()   -> \033[0m", 26);
 
 	bzero(str1, lenght);
 	ft_bzero(str2, lenght);
