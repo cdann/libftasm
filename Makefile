@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: matguig <matguig@student.42.fr>            +#+  +:+       +#+         #
+#    By: cdannapp<matguig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/03/04 15:08:14 by matguig          ###   ########.fr        #
+#    Updated: 2015/03/04 15:08:14 by cdannapp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libfts.a

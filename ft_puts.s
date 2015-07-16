@@ -6,16 +6,12 @@
 ;    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/02/18 18:24:22 by cdannapp          #+#    #+#              ;
-;    Updated: 2015/07/15 19:57:22 by cdannapp         ###   ########.fr        ;
+;    Updated: 2015/07/16 16:05:37 by cdannapp         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
 %define WRITE	0x2000004
 %define STDOUT		1
-
-;section .data
-;	retline	db 10   ;new line
-;	null db "(null)", 0
 
 section .data
 	nullstr		db	"(null)", 10
