@@ -1,19 +1,18 @@
 ; **************************************************************************** ;
 ;                                                                              ;
-;                                                        :::      ::::::::     ;
-;   ft_cat.s                                           :+:      :+:    :+:     ;
-;                                                    +:+ +:+         +:+       ;
-;   By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+          ;
-;                                                +#+#+#+#+#+   +#+             ;
-;   Created: 2015/02/20 14:39:23 by cdannapp          #+#    #+#               ;
-;   Updated: 2015/03/04 15:47:37 by cdannapp         ###   ########.fr         ;
+;                                                         :::      ::::::::    ;
+;    ft_cat.s                                           :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2015/02/20 14:39:23 by cdannapp          #+#    #+#              ;
+;    Updated: 2015/07/16 16:01:22 by cdannapp         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-%define FTCALL(nb)	0x2000000 | nb
-%define READ		3
+%define READ		0x2000003
 %define STDOUT		1
-%define WRITE		4
+%define WRITE		0x2000004
 %define BUFFER_SIZE 256
 
 section .bss
@@ -22,6 +21,7 @@ section .bss
 section .text
 	global _ft_cat
 	extern _ft_memset
+	extern _ft_puts
 
 _ft_cat:
 	enter 16, 0
@@ -30,12 +30,7 @@ _ft_cat:
 	mov r15, rdi
 
 	beginloop:
-		lea rdi, [rel buf]
-		mov rsi, 0
-		mov rdx, BUFFER_SIZE
-		call _ft_memset
-
-		mov rax, FTCALL(READ)		; Read Syscall
+		mov rax, READ		; Read Syscall
 		mov rdi, r15
 		lea rsi, [rel buf]
 		mov rdx, BUFFER_SIZE
@@ -47,7 +42,7 @@ _ft_cat:
 		je end
 
 		mov rdx, rax				; Rax Syscall Read lenght
-		mov rax, FTCALL(WRITE)
+		mov rax, WRITE
 		mov rdi, STDOUT
 		lea rsi, [rel buf]
 		syscall
