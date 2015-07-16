@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cdannapp<matguig@student.42.fr>            +#+  +:+       +#+         #
+#    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 11:44:16 by cdannapp          #+#    #+#              #
-#    Updated: 2015/03/04 15:08:14 by cdannapp         ###   ########.fr        #
+#    Updated: 2015/07/16 16:21:23 by cdannapp         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 NAME = libfts.a
 
 NASM = nasm

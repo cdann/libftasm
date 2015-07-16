@@ -6,7 +6,7 @@
 ;    By: cdannapp <cdannapp@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/02/25 18:24:27 by cdannapp          #+#    #+#              ;
-;    Updated: 2015/07/16 16:04:22 by cdannapp         ###   ########.fr        ;
+;    Updated: 2015/07/16 16:18:31 by cdannapp         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -23,7 +23,6 @@ _ft_bzero:
 	call _ft_memset
 	mov rax, r15
 
-	;call _printf
 	leave
 	ret
 
